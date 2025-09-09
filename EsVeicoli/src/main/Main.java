@@ -1,3 +1,5 @@
+package main;
+
 import main.fourwheels.Camion;
 import main.twowheels.Moto;
 import mechanics.Motore;
