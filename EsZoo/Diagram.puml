@@ -1,0 +1,11 @@
+@startuml
+class Zoo.Lion {
++ String makeSound()
++ void eat(String)
+}
+
+
+
+Zoo.Feedable <|.. Zoo.Lion
+Zoo.Mammal <|-- Zoo.Lion
+@enduml
