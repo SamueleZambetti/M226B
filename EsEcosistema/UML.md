@@ -41,6 +41,3 @@ EcosystemManager
 + callAllPredatorsPolimorphicMethods(...)
 + callAllPredatorsInheritedMethods(...)
 
-MarineEcosystemSimulator (main)
-- crea e popola l'ecosistema e invoca i metodi sopra.
-

@@ -1,8 +1,8 @@
-import java.util.*;
-import java.util.stream.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class EcosystemManager {
-    // ...existing code...
     private List<AquaticCreature> creatures = new ArrayList<>();
 
     public void addCreature(AquaticCreature c) {
@@ -22,6 +22,8 @@ public class EcosystemManager {
                 .collect(Collectors.toList());
     }
 
+
+
     public List<Predator> findMostDangerousPredators(double minEnergy, int minFerocity) {
         return creatures.stream()
                 .filter(c -> c instanceof Predator)
@@ -31,26 +33,21 @@ public class EcosystemManager {
     }
 
     public void callAllPredatorsPolimorphicMethods(Predator p) {
-        // metodi polimorfici: makeSound, move, eat, hunt
         p.makeSound();
-        p.move();
-        p.eat(10); // esempio di nutrimento
-        boolean hunted = p.hunt();
-        System.out.println(hunted);
+        boolean result = p.hunt();
+        System.out.println(result);
     }
 
     public void callAllPredatorsInheritedMethods(Predator p) {
-        // metodi ereditati da AquaticCreature: eat, getter/name/age/energy
-        p.eat(25);
+        p.eat();
         System.out.println(p.getName());
         System.out.println(p.getAge());
         System.out.println(p.getEnergy());
-        // includo anche hunt() ultimo valore booleano nell'esempio
-        System.out.println(p.hunt());
+        System.out.println(p.getFerocity() > 0);
     }
 
-    public List<AquaticCreature> getAllCreatures() {
-        return Collections.unmodifiableList(creatures);
+    public List<AquaticCreature> getCreatures() {
+        return creatures;
     }
+
 }
-
